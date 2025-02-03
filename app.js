@@ -8,7 +8,7 @@ let amigos = [];
 const input = document.getElementById("amigo");
 const ul = document.getElementById("listaAmigos");
 
-//Função que adicionará os amigos do usuário a lista amigos
+//Função que adicionará os amigos do usuário a array amigos
 function adicionarAmigo() {
   // Adiciona valor do input a var amigo
   let amigo = input.value;
@@ -40,4 +40,16 @@ function atualizarListaNoHtml() {
     // adiciona a tag criada anteriormenta a ul (Lembrete não usar innerHTML ele substitui todo o conteudo pelo atual)
     ul.appendChild(li);
   }
+}
+
+
+// Função de sorteio do amigo secreto.
+function sortearAmigo() {
+  console.log("função sortear ativada")
+  if (amigos.length < 1) {
+    alert("Por favor, insira um nome na lista de amigos.")
+    return
+  }
+
+  document.getElementById("resultado").innerHTML = amigos[Math.floor(Math.random() * amigos.length)]
 }
